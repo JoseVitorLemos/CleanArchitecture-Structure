@@ -4,6 +4,7 @@
 2. Service has the reference domain
 3. Data has the reference domain
 4. DIP has the reference domain, application and data
+5. Presentation has the reference DIP
 
 
 
