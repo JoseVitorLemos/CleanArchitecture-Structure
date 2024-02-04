@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Clean.Arch.Presentation.props" />
+</Project>
