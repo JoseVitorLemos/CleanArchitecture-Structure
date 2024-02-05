@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ah2eOtet8maNGWv3ikoqpwDSarKGH/F9YvYd3TsJtxXr1X46fPaCS4QpEW6kifxXOxSzwdhhRYBMOv/D92YCKA==",
+  "dgSpecHash": "61Fqk2DLE95GjdKmFce3uv1jABizS+eOwJW5hhbcymGThIz+hOFCj6bJX7OstpirrWsnu3mxEJ4s4iFTHWRJQA==",
   "success": true,
-  "projectFilePath": "\\\\wsl$\\Ubuntu-20.04\\home\\rick\\codes\\Clean Architecture\\Clean.Arch.Domain\\Clean.Arch.Domain.csproj",
+  "projectFilePath": "/home/rick/codes/CleanArchitecture-Structure/Clean.Arch.Domain/Clean.Arch.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
