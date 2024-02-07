@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Clean.Arch.Tests
-build_property.ProjectDir = \\wsl$\Ubuntu-20.04\home\rick\codes\Clean Architecture\Clean.Arch.Tests\
+build_property.ProjectDir = /home/rick/codes/CleanArchitecture-Structure/Clean.Arch.Tests/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
