@@ -38,7 +38,7 @@ public class IndividualEntityTest
     [Fact]
     public void CreatePerson_WithInvalidValidParameters_InvalidCpf()
     {
-        Action action = () => new IndividualEntity(mockIndivualEntity.Name, string.Empty, mockIndivualEntity.BirthDate, mockIndivualEntity.Gender);
+        Action action = () => new IndividualEntity(mockIndivualEntity.Name, "123456789", mockIndivualEntity.BirthDate, mockIndivualEntity.Gender);
         action.Should().ThrowExactly<Clean.Arch.Domain.Validations.DomainExceptionValidation>()
               .WithMessage("Cpf is required.");
     } 
