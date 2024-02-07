@@ -2,7 +2,7 @@ using Clean.Arch.Domain.Entities;
 
 namespace Clean.Arch.Domain.Interfaces;
 
-public interface IIndividualEntity 
+public interface IIndividualEntityRepository 
 {
     Task<List<IndividualEntity>> GetAll();
     Task<IndividualEntity> GetById(int id);
