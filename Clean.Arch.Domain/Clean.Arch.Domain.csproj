@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Clean.Arch.Tests\Clean.Arch.Tests.csproj" />
+    <ProjectReference Include="..\Clean.Arch.Helpers\Clean.Arch.Helpers.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

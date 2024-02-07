@@ -1,6 +1,7 @@
 using Clean.Arch.Domain.Enums;
 using Clean.Arch.Domain.Validations;
-
+using Clean.Arch.Helpers.Validations;
+ 
 namespace Clean.Arch.Domain.Entities;
 
 public sealed class IndividualEntity : BaseEntity
@@ -23,7 +24,7 @@ public sealed class IndividualEntity : BaseEntity
     private void Validations(string name, string cpf, DateTime birthDate, Genders gender)
     {
         DomainExceptionValidation.When(string.IsNullOrEmpty(name), "Name is required.");
-        DomainExceptionValidation.When(string.IsNullOrEmpty(cpf), "Cpf is required.");
+        DomainExceptionValidation.When(!CpfValidations.IsValid(cpf), "Cpf is required.");
         DomainExceptionValidation.When(DateTime.MinValue == birthDate, "BirthDate is required.");
         DomainExceptionValidation.When(gender == Genders.Undefined, "Gender is required.");
     }
