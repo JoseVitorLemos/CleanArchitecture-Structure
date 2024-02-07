@@ -482,3 +482,28 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Builds
+/build/
+*/bin/
+*/obj/
+obj/
+*.suo
+*.user
+_ReSharper.*/
+*.sdf
+*/**/bin/
+*/**/obj/
+*/**/.sdf
+*/bin/
+**/obj
+*/**/Debug/
+*/**/Release/
+*/**/*.opensdf
+*/**/*.tlog
+*/**/*.log
+*/**/TestResult.xml
+*.VisualState.xml
+*/**/Version.cs
+*/**/Version.h
+*/**/Version.cpp
