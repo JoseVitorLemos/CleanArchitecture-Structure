@@ -19,7 +19,7 @@
 1. dotnet new classlib --name Clean.Arch.Presentatiom
 2. dotnet new classlib --name Clean.Arch.Services
 3. dotnet new classlib --name Clean.Arch.Domaim
-4. dotnet new classlib --name Clean.Arch.DependenceInversion
+4. dotnet new classlib --name Clean.Arch.DependencyInversion
 5. dotnet new classlib --name Clean.Arch.Data
 6. dotnet new xunit --name Clean.Arch.Tests
 7. dotnet new classlib --name Clean.Arch.Helpers
@@ -30,7 +30,7 @@
 2. dotnet sln CleanArchitecture.sln add Clean.Arch.Presentation/Clean.Arch.Presentation.csproj
 3. dotnet sln CleanArchitecture.sln add Clean.Arch.Services/Clean.Arch.Services.csproj
 4. dotnet sln CleanArchitecture.sln add Clean.Arch.Domain/Clean.Arch.Domain.csproj
-5. dotnet sln CleanArchitecture.sln add Clean.Arch.DependenceInversion/Clean.Arch.DependenceInversion.csproj
+5. dotnet sln CleanArchitecture.sln add Clean.Arch.DependencyInversion/Clean.Arch.DependencyInversion.csproj
 6. dotnet sln CleanArchitecture.sln add Clean.Arch.Data/Clean.Arch.Data.csproj
 7. dotnet sln CleanArchitecture.sln add Clean.Arch.Tests/Clean.Arch.Tests.csproj
 8. dotnet sln CleanArchitecture.sln add Clean.Arch.Helpers/Clean.Arch.Helpers.csproj
