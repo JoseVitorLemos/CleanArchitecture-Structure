@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Arch.Data", "Clean.Ar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Arch.Tests", "Clean.Arch.Tests\Clean.Arch.Tests.csproj", "{921F7CBA-46FF-4DEB-BEDE-CF0651CDDE5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Arch.DependenceInversion", "Clean.Arch.DependenceInversion\Clean.Arch.DependenceInversion.csproj", "{F0759D51-421C-48EE-B42A-39169C23A23F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Arch.Helpers", "Clean.Arch.Helpers\Clean.Arch.Helpers.csproj", "{8FDF80B3-B831-4CF8-B926-AC902E11DC75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Arch.DependencyInversion", "Clean.Arch.DependencyInversion\Clean.Arch.DependencyInversion.csproj", "{C0CF215D-EEDA-4AC7-8CB9-C1D277A66E34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,5 +54,9 @@ Global
 		{8FDF80B3-B831-4CF8-B926-AC902E11DC75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FDF80B3-B831-4CF8-B926-AC902E11DC75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FDF80B3-B831-4CF8-B926-AC902E11DC75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0CF215D-EEDA-4AC7-8CB9-C1D277A66E34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0CF215D-EEDA-4AC7-8CB9-C1D277A66E34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0CF215D-EEDA-4AC7-8CB9-C1D277A66E34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0CF215D-EEDA-4AC7-8CB9-C1D277A66E34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
