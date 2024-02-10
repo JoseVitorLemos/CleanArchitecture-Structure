@@ -13,8 +13,6 @@ public static class DependencyInjection
         services.AddDbContext<DataContext>(options => options.UseSqlServer(InfraHelpers.GetConnectionString(),
                                            x => x.MigrationsAssembly(typeof(DbContext).Assembly.FullName)));
 
-        Console.WriteLine(InfraHelpers.GetConnectionString());
-
         var classes = Assembly.Load("Clean.Arch.Data")
             .GetTypes().Where(c => c.IsClass && !c.IsAbstract && !c.IsGenericType && c.IsPublic);
 
