@@ -14,6 +14,6 @@ public static class InfraHelpers
         if (string.IsNullOrEmpty(connectionString))
             throw new NullReferenceException("Invalid connectionString on app.config");
 
-        return provider;
+        return connectionString;
     }
 }
