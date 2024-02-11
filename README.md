@@ -34,3 +34,9 @@
 6. dotnet sln CleanArchitecture.sln add Clean.Arch.Data/Clean.Arch.Data.csproj
 7. dotnet sln CleanArchitecture.sln add Clean.Arch.Tests/Clean.Arch.Tests.csproj
 8. dotnet sln CleanArchitecture.sln add Clean.Arch.Helpers/Clean.Arch.Helpers.csproj
+
+<h3>Create migrations and remove</h3>
+dotnet ef migrations add MIGRATION_NAME --project Clean.Arch.Data -s Clean.Arch.Presentation -c DataContext --verbose
+
+dotnet ef migrations remove --project Clean.Arch.Data -s Clean.Arch.Presentation -c DataContext --verbose
+
