@@ -37,5 +37,6 @@
 
 <h3>Create migrations and remove</h3>
 dotnet ef migrations add MIGRATION_NAME --project Clean.Arch.Data -s Clean.Arch.Presentation -c DataContext --verbose
+
 dotnet ef migrations remove --project Clean.Arch.Data -s Clean.Arch.Presentation -c DataContext --verbose
 
