@@ -11,7 +11,7 @@ public static class DependencyInjection
     public static IServiceCollection AddInfraInjection(this IServiceCollection services)
     {
         services.AddDbContext<DataContext>(options => options.UseSqlServer(InfraHelpers.GetConnectionString(),
-                                           x => x.MigrationsAssembly(typeof(DbContext).Assembly.FullName)));
+                                           x => x.MigrationsAssembly(typeof(DataContext).Assembly.FullName)));
 
         var classes = Assembly.Load("Clean.Arch.Data")
             .GetTypes().Where(c => c.IsClass && !c.IsAbstract && !c.IsGenericType && c.IsPublic);
