@@ -6,7 +6,7 @@ public class CpfValidations
 {
     public static bool IsValid(string cpf)
     {
-        string cpfClear = Regex.Replace(cpf, @"[^\w]", "");
+        string cpfClear = Regex.Replace(cpf, @"[^a-zA-Z0-9]", "");
 
         if (cpfClear.Length != 11) return false;
 
@@ -16,17 +16,17 @@ public class CpfValidations
         for (int i = 0; i < 9; i++)
             sum += (10 - i) * (cpfClear[i] - '0');
 
-        int resto = sum % 11;
-        int digitoVerificador1 = resto < 2 ? 0 : 11 - resto;
+        int rest = sum % 11;
+        int digitValidationOne = rest < 2 ? 0 : 11 - rest;
 
         sum = 0;
         for (int i = 0; i < 10; i++)
         {
             sum += (11 - i) * (cpfClear[i] - '0');
         }
-        resto = sum % 11;
-        int digitoVerificador2 = resto < 2 ? 0 : 11 - resto;
+        rest = sum % 11;
+        int digitValidationTwo = rest < 2 ? 0 : 11 - rest;
 
-        return digitoVerificador1 == (cpfClear[9] - '0') && digitoVerificador2 == (cpfClear[10] - '0');
+        return digitValidationOne == (cpfClear[9] - '0') && digitValidationTwo == (cpfClear[10] - '0');
     }
 }
