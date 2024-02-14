@@ -17,7 +17,7 @@ public class IndividualEntityRepository : IIndividualEntityRepository
     public async Task<List<IndividualEntity>> GetAll()
         => await _dbContext.IndividualEntities.ToListAsync();
 
-    public async Task<IndividualEntity> GetById(int id)
+    public async Task<IndividualEntity> GetById(Guid id)
         => await _dbContext.IndividualEntities.FindAsync(id);
 
     public async Task<IndividualEntity> Insert(IndividualEntity entity)
@@ -41,8 +41,9 @@ public class IndividualEntityRepository : IIndividualEntityRepository
         return entities;
     }
 
-    public async Task<IndividualEntity> Delete(IndividualEntity entity)
+    public async Task<IndividualEntity> Delete(Guid id)
     { 
+        var entity = await GetById(id);
         _dbContext.Remove(entity);
         await _dbContext.SaveChangesAsync();
         return entity;

@@ -8,6 +8,7 @@ public class IndividualEntityDbContext : IEntityTypeConfiguration<IndividualEnti
 {
     public void Configure(EntityTypeBuilder<IndividualEntity> builder)
     {
+        builder.ToTable("INDIVIDUAL_ENTITIES");
         builder.HasKey(x => x.Id);
         builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
         builder.Property(x => x.Cpf).HasMaxLength(11).IsRequired();
