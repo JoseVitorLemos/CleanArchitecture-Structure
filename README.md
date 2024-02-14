@@ -18,9 +18,9 @@
 <h1>Utils</h1>
 <h3>Create projects</h3>
 
-1. dotnet new classlib --name Clean.Arch.Presentatiom
+1. dotnet new classlib --name Clean.Arch.Presentation
 2. dotnet new classlib --name Clean.Arch.Services
-3. dotnet new classlib --name Clean.Arch.Domaim
+3. dotnet new classlib --name Clean.Arch.Domain
 4. dotnet new classlib --name Clean.Arch.DependencyInversion
 5. dotnet new classlib --name Clean.Arch.Data
 6. dotnet new xunit --name Clean.Arch.Tests
@@ -39,8 +39,26 @@
 8. dotnet sln CleanArchitecture.sln add Clean.Arch.Helpers/Clean.Arch.Helpers.csproj
 8. dotnet sln CleanArchitecture.sln add Clean.Arch.Business/Clean.Arch.Business.csproj
 
-<h3>Structure</h3>
+<h3>Structure references</h3>
+<h4>Presentation </h4>
 dotnet add Clean.Arch.Presentation/Clean.Arch.Presentation.csproj refenrece Clean.Arch.DependencyInversion/Clean.Arch.DependencyInversion.csproj
+dotnet add Clean.Arch.Presentation/Clean.Arch.Presentation.csproj refenrece Clean.Arch.Services/Clean.Arch.Services.csproj
+
+<h4>Infra Dependency Inversion</h4>
+dotnet add Clean.Arch.DependencyInversion/Clean.Arch.DependencyInversion.csproj reference Clean.Arch.Domain/Clean.Arch.Domain.csproj
+dotnet add Clean.Arch.DependencyInversion/Clean.Arch.DependencyInversion.csproj reference Clean.Arch.Data/Clean.Arch.Data.csproj
+dotnet add Clean.Arch.DependencyInversion/Clean.Arch.DependencyInversion.csproj reference Clean.Arch.Services/Clean.Arch.Services.csproj
+dotnet add Clean.Arch.DependencyInversion/Clean.Arch.DependencyInversion.csproj reference Clean.Arch.Business/Clean.Arch.Business.csproj
+
+<h4>Services</h4>
+dotnet add Clean.Arch.Services/Clean.Arch.Services.csproj refenrece Clean.Arch.Business/Clean.Arch.Business.csproj
+dotnet add Clean.Arch.Services/Clean.Arch.Services.csproj refenrece Clean.Arch.Domain/Clean.Arch.Domain.csproj
+
+<h4>Business</h4>
+dotnet add Clean.Arch.Business/Clean.Arch.Business.csproj refenrece Clean.Arch.Domain/Clean.Arch.Domain.csproj
+
+<h4>Data</h4>
+dotnet add Clean.Arch.Data/Clean.Arch.Data.csproj refenrece Clean.Arch.Domain/Clean.Arch.Domain.csproj
 
 <h3>Create migrations, update and remove</h3>
 dotnet ef migrations add MIGRATION_NAME --project Clean.Arch.Data -s Clean.Arch.Presentation -c DataContext --verbose
