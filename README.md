@@ -1,10 +1,12 @@
 # CleanArchitecture-Structure
 
-1. Domain has no reference
-2. Service has the reference domain
-3. Data has the reference domain
-4. DIP has the reference domain, application and data
-5. Presentation has the reference DIP
+1. Presentation has the reference DependencyInversion and Services 
+2. DependencyInversion has the reference Domain, Data, Service and Business
+3. Service has the reference Domain and Business
+4. Business has the reference Domain
+5. Data has the reference domain
+6. Domain has no reference 
+
 </br>
 </br>
 
@@ -37,7 +39,10 @@
 8. dotnet sln CleanArchitecture.sln add Clean.Arch.Helpers/Clean.Arch.Helpers.csproj
 8. dotnet sln CleanArchitecture.sln add Clean.Arch.Business/Clean.Arch.Business.csproj
 
-<h3>Create migrations and remove</h3>
+<h3>Structure</h3>
+dotnet add Clean.Arch.Presentation/Clean.Arch.Presentation.csproj refenrece Clean.Arch.DependencyInversion/Clean.Arch.DependencyInversion.csproj
+
+<h3>Create migrations, update and remove</h3>
 dotnet ef migrations add MIGRATION_NAME --project Clean.Arch.Data -s Clean.Arch.Presentation -c DataContext --verbose
 
 dotnet ef migrations remove --project Clean.Arch.Data -s Clean.Arch.Presentation -c DataContext --verbose
