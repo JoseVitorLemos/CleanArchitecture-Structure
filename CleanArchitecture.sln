@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Arch.Helpers", "Clean
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Arch.DependencyInversion", "Clean.Arch.DependencyInversion\Clean.Arch.DependencyInversion.csproj", "{C0CF215D-EEDA-4AC7-8CB9-C1D277A66E34}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clean.Arch.Business", "Clean.Arch.Business\Clean.Arch.Business.csproj", "{9C518565-21D0-4E4A-AFCE-2D54F61640B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,9 @@ Global
 		{C0CF215D-EEDA-4AC7-8CB9-C1D277A66E34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0CF215D-EEDA-4AC7-8CB9-C1D277A66E34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0CF215D-EEDA-4AC7-8CB9-C1D277A66E34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C518565-21D0-4E4A-AFCE-2D54F61640B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C518565-21D0-4E4A-AFCE-2D54F61640B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C518565-21D0-4E4A-AFCE-2D54F61640B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C518565-21D0-4E4A-AFCE-2D54F61640B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
