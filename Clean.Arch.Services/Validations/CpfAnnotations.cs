@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using Clean.Arch.Helpers.Validations;
 
-namespace Clean.Arch.Services.DTO;
+namespace Clean.Arch.Validations;
 
-public class CpfAnnotation : ValidationAttribute
+public class CpfAnnotations : ValidationAttribute
 {
     protected override ValidationResult IsValid(object cpf, ValidationContext validationContext)
     {

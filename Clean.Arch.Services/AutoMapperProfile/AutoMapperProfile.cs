@@ -8,6 +8,7 @@ public class AutoMapperProfile : Profile
 {
     public AutoMapperProfile()
     {
-        CreateMap<IndividualEntity, IndividualEntityDTO>().ReverseMap();
+        CreateMap<IndividualEntity, IndividualEntityDTO>()
+            .ForMember(x => x.Gender, opt => opt.ToString()).ReverseMap();
     }
 }
