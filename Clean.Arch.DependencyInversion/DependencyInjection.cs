@@ -1,9 +1,9 @@
-﻿using System.Reflection;
-using Clean.Arch.Data.DatabaseContext;
+﻿using Clean.Arch.Data.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Clean.Arch.Helpers.Utils;
 using Clean.Arch.Helpers.Enums;
+using Clean.Arch.Services.AutoMapperProfile;
 
 namespace Clean.Arch.DependencyInversion;
 
@@ -11,24 +11,16 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfraInjection(this IServiceCollection services)
     {
-        RegisterConstext(services);
+        RegisterDbConstext(services);
+        RegisterRepositories(services);
+        RegisterServices(services);
+        RegisterBusiness(services);
 
-        var classes = Assembly.Load("Clean.Arch.Data")
-            .GetTypes().Where(c => c.IsClass && !c.IsAbstract && !c.IsGenericType && c.IsPublic);
-
-        foreach (var classType in classes)
-        {
-            var interfaces = Assembly.Load("Clean.Arch.Domain")
-                .GetTypes().Where(i => i.IsInterface && i.IsAssignableFrom(classType));
-
-            foreach (var interfaceType in interfaces)
-                services.AddScoped(interfaceType, classType);
-        }
-
+        services.AddAutoMapper(typeof(AutoMapperProfile));
         return services;
     }
 
-    private static void RegisterConstext(IServiceCollection services)
+    private static void RegisterDbConstext(IServiceCollection services)
     {
         switch (InfraHelpers.GetConnectionString().ProviderName)
         {
@@ -40,5 +32,37 @@ public static class DependencyInjection
             default:
                 throw new Exception("Provider not implemented");
         }
+    }
+
+    private static void AddDependencyInjectin(IServiceCollection services, string assemblyClass,
+                                         string assemblyInterface)
+    {
+        foreach (var classType in AssemblyHelpers.GetClasses(assemblyClass))
+        {
+            var interfaces = AssemblyHelpers.GetInterfaces(assemblyInterface)
+                                            .Where(x => x.IsAssignableFrom(classType));
+
+            foreach (var interfaceType in interfaces)
+                services.AddScoped(interfaceType, classType);
+        }
+    }
+
+    private static void RegisterRepositories(IServiceCollection services)
+    {
+        string assemblyDataLayer = "Clean.Arch.Data";
+        string assemblyDomainLayer = "Clean.Arch.Domain";
+        AddDependencyInjectin(services, assemblyDataLayer, assemblyDomainLayer);
+    }
+
+    private static void RegisterServices(IServiceCollection services)
+    {
+        string assemblyServiceLayer = "Clean.Arch.Services";
+        AddDependencyInjectin(services, assemblyServiceLayer, assemblyServiceLayer);
+    }
+
+    private static void RegisterBusiness(IServiceCollection services)
+    {
+        string assemblyBusinessLayer = "Clean.Arch.Business";
+        AddDependencyInjectin(services, assemblyBusinessLayer, assemblyBusinessLayer);
     }
 }
