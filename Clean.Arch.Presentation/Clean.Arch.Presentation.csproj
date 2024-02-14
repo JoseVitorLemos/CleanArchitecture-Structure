@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Clean.Arch.DependencyInversion\Clean.Arch.DependencyInversion.csproj" />
+    <ProjectReference Include="..\Clean.Arch.Services\Clean.Arch.Services.csproj" />
   </ItemGroup>
 
 </Project>

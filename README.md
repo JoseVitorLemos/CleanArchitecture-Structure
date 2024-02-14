@@ -23,6 +23,7 @@
 5. dotnet new classlib --name Clean.Arch.Data
 6. dotnet new xunit --name Clean.Arch.Tests
 7. dotnet new classlib --name Clean.Arch.Helpers
+8. dotnet new classlib --name Clean.Arch.Business
 
 <h3>Create global solution</h3>
 
@@ -34,9 +35,11 @@
 6. dotnet sln CleanArchitecture.sln add Clean.Arch.Data/Clean.Arch.Data.csproj
 7. dotnet sln CleanArchitecture.sln add Clean.Arch.Tests/Clean.Arch.Tests.csproj
 8. dotnet sln CleanArchitecture.sln add Clean.Arch.Helpers/Clean.Arch.Helpers.csproj
+8. dotnet sln CleanArchitecture.sln add Clean.Arch.Business/Clean.Arch.Business.csproj
 
 <h3>Create migrations and remove</h3>
 dotnet ef migrations add MIGRATION_NAME --project Clean.Arch.Data -s Clean.Arch.Presentation -c DataContext --verbose
 
 dotnet ef migrations remove --project Clean.Arch.Data -s Clean.Arch.Presentation -c DataContext --verbose
 
+dotnet ef database update --project Clean.Arch.Data -s Clean.Arch.Presentation -c DataContext --verbose
