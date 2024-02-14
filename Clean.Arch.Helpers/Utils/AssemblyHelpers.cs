@@ -14,4 +14,12 @@ public static class AssemblyHelpers
             return Path.GetDirectoryName(path);
         }
     }
+
+    public static IEnumerable<Type> GetClasses(string assemblyName)
+        => Assembly.Load(assemblyName).GetTypes()
+                   .Where(c => c.IsClass && !c.IsAbstract && !c.IsGenericType && c.IsPublic);
+
+    public static IEnumerable<Type> GetInterfaces(string assemblyName)
+        => Assembly.Load(assemblyName)
+                   .GetTypes().Where(i => i.IsInterface);
 }
