@@ -6,8 +6,8 @@ namespace Clean.Arch.Services.DTO;
 
 public class IndividualEntityDTO
 {    
-    public Guid Id { get; private set; }
-    public DateTime CreatedDate { get; private set; }
+    public Guid Id { get; set; }
+    public DateTime CreatedDate { get; set; }
     [Required(ErrorMessage = "Name is required")]
     public string Name { get; set; }
     [CpfAnnotations(ErrorMessage = "Cpf is required")]

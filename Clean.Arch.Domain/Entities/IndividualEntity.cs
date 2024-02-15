@@ -1,4 +1,5 @@
 using Clean.Arch.Domain.Enums;
+using Clean.Arch.Helpers.Utils;
 using Clean.Arch.Helpers.Validations;
 
 namespace Clean.Arch.Domain.Entities;
@@ -25,6 +26,6 @@ public sealed class IndividualEntity : BaseEntity
         ExceptionValidation.When(string.IsNullOrEmpty(name), "Name is required.");
         ExceptionValidation.When(!CpfValidations.IsValid(cpf), "Cpf is required.");
         ExceptionValidation.When(DateTime.MinValue == birthDate, "BirthDate is required.");
-        ExceptionValidation.When(gender == Genders.Undefined, "Gender is required.");
+        ExceptionValidation.When(!EnumValidations.IsValidEnum<Genders>(gender), "Gender is required.");
     }
 }

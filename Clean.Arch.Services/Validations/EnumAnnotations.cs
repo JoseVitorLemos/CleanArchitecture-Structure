@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Clean.Arch.Domain.Enums;
+using Clean.Arch.Helpers.Utils;
 
 namespace Clean.Arch.Validations;
 
@@ -7,11 +8,9 @@ public class EnumAnnotations : ValidationAttribute
 {
     protected override ValidationResult IsValid(object value, ValidationContext validationContext)
     {
-        Enum.TryParse(Convert.ToString(value), true, out Genders gender);
+        if (EnumValidations.IsValidEnum<Genders>(value))
+            return ValidationResult.Success;
 
-        if (gender.Equals(Genders.Undefined))
-            return new ValidationResult("gender is Undefined");
-
-        return ValidationResult.Success;
+        return new ValidationResult("gender is Undefined");
     }
 }
