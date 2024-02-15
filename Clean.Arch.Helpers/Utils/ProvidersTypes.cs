@@ -12,7 +12,7 @@ public class Providers
     public Providers()
     {
         Enum.TryParse(ConfigurationManager.AppSettings["provider"], true, out ProvidersTypes provider);
-        ExceptionValidation.When(provider.Equals(ProvidersTypes.Undefined), "ProvaiderName cannot be null");
+        ExceptionValidation.When(!EnumValidations.IsValidEnum<ProvidersTypes>(provider), "ProvaiderName cannot be null");
 
         ConnectionStringSettings stringSettings = ConfigurationManager.ConnectionStrings[provider.ToString()];
         ExceptionValidation.When(stringSettings.Name != provider.ToString(), "Connection name does not represent Provider Name");
