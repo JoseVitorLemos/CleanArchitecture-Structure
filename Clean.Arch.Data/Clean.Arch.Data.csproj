@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Clean.Arch.Domain\Clean.Arch.Domain.csproj" />
+    <ProjectReference Include="..\Clean.Arch.Helpers\Clean.Arch.Helpers.csproj" />
   </ItemGroup>
 
   <ItemGroup>

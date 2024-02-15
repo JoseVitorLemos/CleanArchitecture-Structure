@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Clean.Arch.Helpers.Utils;
 using Clean.Arch.Helpers.Enums;
 using Clean.Arch.Services.AutoMapperProfile;
+using Clean.Arch.Data.Repositories;
+using Clean.Arch.Domain.Interfaces;
 
 namespace Clean.Arch.DependencyInversion;
 
@@ -49,9 +51,7 @@ public static class DependencyInjection
 
     private static void RegisterRepositories(IServiceCollection services)
     {
-        string assemblyDataLayer = "Clean.Arch.Data";
-        string assemblyDomainLayer = "Clean.Arch.Domain";
-        AddDependencyInjectin(services, assemblyDataLayer, assemblyDomainLayer);
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
     }
 
     private static void RegisterServices(IServiceCollection services)

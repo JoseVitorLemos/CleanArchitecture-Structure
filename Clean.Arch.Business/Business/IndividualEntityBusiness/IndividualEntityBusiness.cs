@@ -5,9 +5,9 @@ namespace Clean.Arch.Business.IndividualEntityBusiness;
 
 public class IndividualEntityBusiness : IIndividualEntityBusiness
 {
-    private readonly IIndividualEntityRepository _individualEntityRepository;
+    private readonly IRepository<IndividualEntity> _individualEntityRepository;
 
-    public IndividualEntityBusiness(IIndividualEntityRepository individualEntityRepository)
+    public IndividualEntityBusiness(IRepository<IndividualEntity> individualEntityRepository)
     {
         _individualEntityRepository = individualEntityRepository;
     }
