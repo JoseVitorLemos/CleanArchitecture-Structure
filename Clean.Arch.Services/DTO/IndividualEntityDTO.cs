@@ -14,6 +14,6 @@ public class IndividualEntityDTO
     public string Cpf { get; set; }
     [BirthDateAnnotations(ErrorMessage = "Cpf is required")]
     public DateTime BirthDate { get; set; }
-    [EnumAnnotations(ErrorMessage = "Gender is required")]
+    [EnumAnnotations<Genders>(ErrorMessage = "Gender is required")]
     public Genders Gender { get; set; }
 }

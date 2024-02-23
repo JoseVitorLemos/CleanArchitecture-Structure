@@ -1,16 +1,15 @@
 using System.ComponentModel.DataAnnotations;
-using Clean.Arch.Domain.Enums;
 using Clean.Arch.Helpers.Utils;
 
 namespace Clean.Arch.Validations;
 
-public class EnumAnnotations : ValidationAttribute
+public class EnumAnnotations<T> : ValidationAttribute where T : struct
 {
     protected override ValidationResult IsValid(object value, ValidationContext validationContext)
     {
-        if (EnumValidations.IsValidEnum<Genders>(value))
+        if (EnumValidations.IsValidEnum<T>(value))
             return ValidationResult.Success;
 
-        return new ValidationResult("gender is Undefined");
+        return new ValidationResult($"{typeof(T).Name} is required");
     }
 }

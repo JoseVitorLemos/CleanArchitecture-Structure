@@ -55,7 +55,9 @@ public class IndividualEntityTest
     [Fact]
     public void CreatePerson_WithInvalidValidParameters_InvalidGender()
     {
-        Action action = () => new IndividualEntity(mockIndivualEntity.Name, mockIndivualEntity.Cpf, mockIndivualEntity.BirthDate, Genders.Undefined);
+
+        Enum.TryParse("-1", true, out Genders invalidGender);
+        Action action = () => new IndividualEntity(mockIndivualEntity.Name, mockIndivualEntity.Cpf, mockIndivualEntity.BirthDate, invalidGender);
         action.Should().ThrowExactly<ExceptionValidation>()
               .WithMessage("Gender is required.");
     } 
